@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.13.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exoplanets" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b466a32-6ac5-4dcb-80bb-8567db70b43d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="connSqlServer"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Ik91clNvbGFyU3lzdGVtUGxhbmV0IiAsMTUsMTUsMjE1OWI2MTItODBjOS00ZTU0LWI5YTUtZWEx
+YzIzOGZmYzQ2Ow==]]>
+	</property>
+	<parameter name="name_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT name,
+	semimayoraxis
+FROM "OurSolarSystemPlanet" WHERE name = $P{name_id}]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="semimayoraxis" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="semimayoraxis"/>
+		<property name="com.jaspersoft.studio.field.label" value="semimayoraxis"/>
+	</field>
+	<variable name="name_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<image onErrorType="Icon">
+				<reportElement x="40" y="10" width="50" height="50" uuid="5c69c883-dcc8-4b47-ad79-0ce83f2ca238"/>
+				<imageExpression><![CDATA["src/img/Jup.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="110" width="550" height="1" uuid="1ab96332-f3b8-4d57-a675-5aecfd8670a4">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="109" y="7" width="171" height="30" backcolor="#FFFFFF" uuid="5dd406b1-6540-40ab-a4a0-a419ade14099"/>
+				<textElement>
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semimajor axis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="6" width="100" height="30" backcolor="#FFFFFF" uuid="248fa751-7849-4797-910c-d56d77dfcd60"/>
+				<textElement>
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID planet]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement stretchType="ContainerHeight" x="0" y="2" width="100" height="30" uuid="0ef71b41-b938-4d0c-88c3-438d332b1bb2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddf1ef8b-8abf-45b3-9087-5278df686c29"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="ContainerHeight" x="110" y="2" width="100" height="30" uuid="069216f0-dfa1-48a3-a99e-d7e77b1204ae">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a96edb9c-82e7-46ab-8cfd-26391e734f60"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{semimayoraxis}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
